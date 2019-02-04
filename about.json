@@ -2,4 +2,5 @@
   "name": "Codecombat Tab Theme For Discourse",
   "about_url": "about:blank",
   "license_url": "https://github.com/Chaboi45/CocoDiscourseTabTheme/blob/master/LICENSE"
+  "component": true
 }
