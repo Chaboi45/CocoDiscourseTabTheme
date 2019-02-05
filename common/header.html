@@ -2,7 +2,7 @@
     <script type="text/discourse-plugin" version="0.8">
       $(document).ready(function() {
         let currentLocale = I18n.currentLocale(); 
-        I18n.translations[currentLocale].js.composer.my_button_text = "Hello and welcome to codecombat discourse! This is a cozy forum where you can share ideas, share fan art, get assistance for code, etc! Before you proceed, we hope that you review [this topic](https://discourse.codecombat.com/t/welcome-to-codecombat-discourse-forums/15601), which shows all essentials of this board! Thanks!";
+        I18n.translations[currentLocale].js.composer.my_button_text = "@staff, <Message>";
         I18n.translations[currentLocale].js.my_button_title = "Alert Staff";
       });
 
@@ -11,10 +11,15 @@
           trimLeading: true,
           id: "buttonID",
           group: "insertions",
-          icon: 'user-shield',
+          icon: 'shield',
           title: "my_button_title",
           perform: function(e) {
-            alert('Alert Sent to Moderator!')
+            alert('This will alert staff!')
+            return e.applySurround(
+              '<div data-theme="foo">\n\n',
+              "\n\n</div>",
+              "my_button_text"
+            );
           }
         });
       });
