@@ -1,4 +1,28 @@
 <div class="wrap">
+    <script type="text/discourse-plugin" version="0.8">
+      $(document).ready(function() {
+        let currentLocale = I18n.currentLocale(); 
+        I18n.translations[currentLocale].js.composer.my_button_text = "Hello and welcome to codecombat discourse! This is a cozy forum where you can share ideas, share fan art, get assistance for code, etc! Before you proceed, we hope that you review [this topic](https://discourse.codecombat.com/t/welcome-to-codecombat-discourse-forums/15601), which shows all essentials of this board! Thanks!";
+        I18n.translations[currentLocale].js.my_button_title = "Welcome Message";
+      });
+
+      api.onToolbarCreate(function(toolbar) {
+        toolbar.addButton({
+          trimLeading: true,
+          id: "buttonID",
+          group: "insertions",
+          icon: 'heart',
+          title: "my_button_title",
+          perform: function(e) {
+            return e.applySurround(
+              '<div data-theme="foo">\n\n',
+              "\n\n</div>",
+              "my_button_text"
+            );
+          }
+        });
+      });
+    </script>
     <button 
         class="btn btn-primary" 
         onclick="window.location.href = 'https://codecombat.com/play/';">Play
