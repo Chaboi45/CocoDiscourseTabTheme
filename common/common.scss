@@ -1,10 +1,11 @@
 @import "common/foundation/variables";
 
 
-/*Display a custom title after the username for all STAFF user
+/*Display a custom title after the username differentiating ADMIN users from MOD users
 It will not be displayed if site setting "prioritize username in ux" is disabled */
-.username.admin::after {
-    content: 'Administrator';
+.username {
+  &.admin:after {
+    content: 'Admin user' !important;
     color: red !important;
     border: 1px solid red !important;
     border-radius: 8px;
@@ -12,9 +13,10 @@ It will not be displayed if site setting "prioritize username in ux" is disabled
     padding-right: 4px;
     margin-left: 5px;
     display: inline-block;
-}
-.username.moderator::after {
-    content: 'Moderator';
+  }
+
+  &.moderator:after {
+    content: 'Moderator user';
     color: green;
     border: 1px solid green;
     border-radius: 8px;
@@ -22,15 +24,10 @@ It will not be displayed if site setting "prioritize username in ux" is disabled
     padding-right: 4px;
     margin-left: 5px;
     display: inline-block;
+  }
 }
 
-/*Optional - Reduce size in the user card*/
-#user-card .username.moderator::after {
-    font-size:.7em;
-    margin-left:0px;
+/*Optional - Hide the icon shield only on posts*/
+.names .svg-icon-title {
+  display: none;
 }
-#user-card .username.admin::after {
-    font-size:.7em;
-    margin-left:0px;
-}
-
