@@ -35,17 +35,4 @@ It will not be displayed if site setting "prioritize username in ux" is disabled
   display: flex;
   align-items: center;
   gap: 0.5em;
-
-  a.btn {
-    padding: 4px 8px;
-    font-size: 0.75em;
-    background-color: var(--primary-medium);
-    color: #fff;
-    border-radius: 4px;
-    text-decoration: none;
-
-    &:hover {
-      background-color: darken(var(--primary-medium), 10%);
-    }
-  }
 }
