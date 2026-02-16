@@ -3,6 +3,7 @@ export default {
 
   initialize() {
     api.onPageChange(() => {
+      console.log("test");
       const toggle = document.getElementById("custom-dropdown-toggle");
       const menu = document.getElementById("custom-dropdown-menu");
 
