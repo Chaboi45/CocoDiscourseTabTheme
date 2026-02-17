@@ -9,6 +9,7 @@ export default apiInitializer((api) => {
       if (toggle && menu) {
         toggle.addEventListener("click", (e) => {
           console.log("hello");
+          e.preventDefault();
           menu.classList.toggle("show");
         });
 
