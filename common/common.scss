@@ -37,8 +37,10 @@ It will not be displayed if site setting "prioritize username in ux" is disabled
   position: absolute;
   z-index: 1000;
 }
+.custom-dropdown .dropdown-menu { z-index: 9999; // or even higher if needed }
 
 #custom-dropdown-menu.show {
   display: block;
 }
+
 
