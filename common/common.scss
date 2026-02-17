@@ -32,15 +32,40 @@ It will not be displayed if site setting "prioritize username in ux" is disabled
   display: none;
 }
 
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  z-index: 9999;
-}
-.custom-dropdown { z-index: 9999; }
+.custom-dropdown {
+  position: relative;
+  display: inline-block;
 
-#custom-dropdown-menu.show {
-  display: block;
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--secondary);
+    border: 1px solid var(--primary-low);
+    border-radius: 4px;
+    z-index: 9999;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    min-width: 180px;
+
+    li a {
+      display: block;
+      padding: 8px 12px;
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    li a:hover {
+      background-color: var(--primary-low);
+    }
+  }
+
+  &:hover .dropdown-menu {
+    display: block;
+  }
 }
+
 
 
