@@ -1,6 +1,7 @@
 import { apiInitializer } from "discourse/lib/api";
 
 export default apiInitializer((api) => {
+/*
    api.onPageChange(() => {
       console.log("hello");
       const toggle = document.getElementById("custom-dropdown-toggle");
@@ -20,4 +21,5 @@ export default apiInitializer((api) => {
         });
       }
     });
+*/
 });
